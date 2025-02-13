@@ -1,4 +1,10 @@
+import { Store } from "./services/Store.js";
+import { loadData } from "./services/Menu.js";
 
-window.addEventListener("DOMContentLoaded", function () {
-    let nav = document.querySelector("nav")
+window.app = {
+    store: Store
+}
+
+window.addEventListener("DOMContentLoaded", async function () {
+    loadData();
 })
