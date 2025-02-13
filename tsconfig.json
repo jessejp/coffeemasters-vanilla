@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "es2020", // Or a target that suits your needs (es5, es6, esnext, etc.)
+        "module": "es2020", // Or "commonjs" if you are not using ES modules
+        "lib": [
+            "es2020",
+            "dom"
+        ], // Include necessary libraries (dom for browser environment)
+        "allowJs": true, // Allow JavaScript files to be compiled (essential for JSDoc projects)
+        "checkJs": true, // Enable type checking in .js files (leverages JSDoc)
+        "outDir": "./dist", // Output directory for compiled files (optional, but recommended)
+        "strict": true, // Enable all strict type-checking options (highly recommended for catching errors)
+        "noImplicitAny": false, // Allow implicit any types (you can set to true if you want to be stricter)
+        "noEmit": true, // Do not emit output files (if you only want type checking and no compilation)
+        "esModuleInterop": true, // Enables better interoperability between CommonJS and ES modules
+        "moduleResolution": "node", // How modules are resolved (node is the most common)
+        "types": [], // If you have other type definitions, you can include them here
+        "baseUrl": "./src", // Base URL for module resolution (optional, but good practice)
+        "paths": { // Map module imports to locations (optional, but helpful for cleaner imports)
+            "@/*": [
+                "*"
+            ] // Example: import from '@/components/MyComponent'
+        }
+    },
+    "include": [
+        "./**/*.js", // Include all JavaScript files in the 'src' directory
+        "globals.d.ts" // Include your global declarations file
+    ],
+    "exclude": [
+        "node_modules" // Exclude node_modules (always a good idea)
+    ]
+}
