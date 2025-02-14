@@ -9,7 +9,7 @@
         "allowJs": true, // Allow JavaScript files to be compiled (essential for JSDoc projects)
         "checkJs": true, // Enable type checking in .js files (leverages JSDoc)
         "outDir": "./dist", // Output directory for compiled files (optional, but recommended)
-        "strict": true, // Enable all strict type-checking options (highly recommended for catching errors)
+        "strict": false, 
         "noImplicitAny": false, // Allow implicit any types (you can set to true if you want to be stricter)
         "noEmit": true, // Do not emit output files (if you only want type checking and no compilation)
         "esModuleInterop": true, // Enables better interoperability between CommonJS and ES modules

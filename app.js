@@ -1,16 +1,15 @@
 import { Store } from "./services/Store.js";
 import { loadData } from "./services/Menu.js";
+import { Router } from "./services/Router.js";
 
-/**
- * @type {Object}
- * @property {import("./services/Store.js").StoreType} store
- */
-const app = {
-    store: Store
+window.app = {
+    store: Store,
+    router: Router
 };
 
-window.app = app;
+export const app = window.app;
 
 window.addEventListener("DOMContentLoaded", async function () {
     loadData();
+    app.router.init();
 })
