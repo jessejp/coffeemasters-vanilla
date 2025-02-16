@@ -21,6 +21,36 @@ export class MenuPage extends HTMLElement {
             const content = template.content.cloneNode(true)
             this.root.appendChild(content)
         }
+
+        window.addEventListener("appmenuchange", () => {
+            this.render()
+        })
+    }
+
+    render() {
+        const menu = this.root.querySelector("#menu");
+        if (!window.app.store.menu) {
+            menu.innerHTML = "Loading..."
+        } else {
+            menu.innerHTML = "" // clear first when using appendChild
+
+            for (let category of window.app.store.menu) {
+                const liCategory = document.createElement("li")
+                liCategory.innerHTML = `
+                    <h3>${category.name}</h3>
+                    <ul class="category">
+                    </ul>
+                `
+
+                category.products.forEach(product => {
+                    const item = document.createElement("product-item")
+                    item.dataset.product = JSON.stringify(product)
+                    liCategory.querySelector("ul").appendChild(item)
+                })
+
+                menu.appendChild(liCategory)
+            }
+        }
     }
 }
 
