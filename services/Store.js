@@ -16,6 +16,7 @@
 /**
  * @typedef {Object} Store
  * @property {MenuItem[] | null} menu
+ * @property {{product: Product, quantity: number}[]} cart
  */
 
 
@@ -32,7 +33,7 @@ export const Store = new Proxy(OriginalStore, {
             window.dispatchEvent(new Event("appmenuchange"))
         }
         if (property == "cart") {
-            window.dispatchEvent(new Event("appmenuchange"))
+            window.dispatchEvent(new Event("appcartchange"))
         }
         return true
     }

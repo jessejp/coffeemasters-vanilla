@@ -32,6 +32,7 @@ export const Router = {
             history.pushState({ route }, "", route)
         }
         var pageElement = null;
+        
         switch (route) {
             case "/":
                 pageElement = document.createElement("menu-page")
@@ -40,8 +41,8 @@ export const Router = {
                 pageElement = document.createElement("order-page")
                 break;
             default:
-                if (route.startsWith("/details")) {
-                    pageElement = document.createElement("details-page")
+                if (route.startsWith("/product")) {
+                    pageElement = document.createElement("product-page")
                     const paramId = route.substring(route.lastIndexOf("-") + 1)
                     pageElement.dataset.id = paramId;
                 }
