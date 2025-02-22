@@ -13,7 +13,7 @@ export async function getProductItemById(id) {
 
     for (let c of app.store.menu) {
         for (let p of c.products) {
-            if (p.id === id) {
+            if (p.id == id) {
                 return p
             }
         }
